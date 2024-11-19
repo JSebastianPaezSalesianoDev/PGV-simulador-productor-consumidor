@@ -1,30 +1,17 @@
 package net.salesianos.orchard;
 
+import java.util.Random;
+
 public class Vegetable {
 
-    private String type;
-    private int timeOfRaise;
-    private boolean state;
-    
-    public Vegetable(String type, int timeOfRaise) {
-        this.type = type;
-        this.timeOfRaise = timeOfRaise;
-        this.state = false;
+    private static final String[] VEGETABLES = {
+        "lettuce", "cabbage", "onion", "spinach", "potato", "celery", "asparagus", "radish", "broccoli",
+        "artichoke", "tomato", "cucumber", "eggplant", "carrot", "green", "bean"
+};
+    public static String getVegetable() {
+        Random random = new Random();
+        int index = random.nextInt(VEGETABLES.length);
+        return VEGETABLES[index];
     }
-
-    public String getType() {
-        return type;
-    }
-
-    public int getTimeOfRaise() {
-        return timeOfRaise;
-    }
-
-    public boolean isState() {
-        return state;
-    }
-    
-    public void setState(boolean state) {
-        this.state = state;
-    }
+  
 }
