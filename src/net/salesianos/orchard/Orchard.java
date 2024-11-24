@@ -29,4 +29,14 @@ private int capacidad;
         notifyAll();
     }
 
+
+    public boolean estaLleno() {
+        return verduras.size() == capacidad; 
+    }
+
+
+    public boolean estaVacio() {
+        return verduras.isEmpty(); 
+    }
+
 }
