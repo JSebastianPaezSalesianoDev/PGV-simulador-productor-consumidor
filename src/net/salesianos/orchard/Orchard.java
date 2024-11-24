@@ -20,7 +20,7 @@ private int capacidad;
         notifyAll();
     }
 
-    public synchronized void retirarVerdura(int customerId) throws InterruptedException {
+    public synchronized void retirarVerdura(String customerId) throws InterruptedException {
         while (verduras.isEmpty()) {
             wait();
         }
