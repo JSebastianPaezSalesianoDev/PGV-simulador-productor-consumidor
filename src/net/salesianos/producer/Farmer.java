@@ -11,9 +11,10 @@ public class Farmer extends Thread{
     public Farmer(String name) {
         super(name);
         vegLimit = 20;
-        maxGrowingTime = 20;
+        maxGrowingTime = 20000;
     }
-    private void plantarVerdura() throws Exception {
+
+    @Override public void run() {
 
         try{
 
@@ -21,7 +22,7 @@ public class Farmer extends Thread{
                 String verdura = Vegetable.getVegetable();
                 int tiempoCrecimiento = random.nextInt(maxGrowingTime);
                 Thread.sleep(tiempoCrecimiento);
-                System.out.println(this.getName() + " ha plantado una " + verdura + " que ha crecido en " + tiempoCrecimiento + " ms.");
+                System.out.println(this.getName() + " ha plantado una " + verdura + " que ha crecido en " + tiempoCrecimiento + " segunditos");
             
             }
         }catch(Exception e){
