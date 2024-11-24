@@ -1,11 +1,12 @@
 package net.salesianos.producer;
+
 import java.util.Random;
 
 import net.salesianos.orchard.Orchard;
 import net.salesianos.orchard.Vegetable;
 
-public class Farmer extends Thread{
-    
+public class Farmer extends Thread {
+
     private int vegLimit;
     private int maxGrowingTime;
     private Random random;
@@ -18,21 +19,22 @@ public class Farmer extends Thread{
         orchard = new Orchard(20);
     }
 
-    @Override public void run() {
+    @Override
+    public void run() {
 
-        try{
+        try {
 
             for (int i = 0; i < vegLimit; i++) {
                 String verdura = Vegetable.getVegetable();
                 int tiempoCrecimiento = random.nextInt(maxGrowingTime);
                 Thread.sleep(tiempoCrecimiento);
-                System.out.println(this.getName() + " ha plantado una " + verdura + " que ha crecido en " + tiempoCrecimiento + " segunditos");
+                System.out.println(this.getName() + " ha plantado una " + verdura + " que ha crecido en "
+                        + tiempoCrecimiento + " segunditos");
                 orchard.añadirVerdura(verdura, this.getName());
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-      
+
     }
 }
-
