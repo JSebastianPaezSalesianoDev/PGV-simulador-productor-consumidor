@@ -29,4 +29,13 @@ public class Orchard {
         System.out.println("Cliente " + customerId + " ha consumido: " + verdura);
         notifyAll();
     }
+
+    public boolean estaLleno() {
+        return verduras.size() == capacidad; 
+    }
+
+
+    public boolean estaVacio() {
+        return verduras.isEmpty(); 
+    }
 }
