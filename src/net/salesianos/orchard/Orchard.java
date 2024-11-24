@@ -19,4 +19,13 @@ private int capacidad;
         System.out.println("Granjero " + farmerId + " ha producido: " + verdura);
         notifyAll();
     }
+
+    public synchronized void retirarVerdura(int customerId) throws InterruptedException {
+        while (verduras.isEmpty()) {
+            wait();
+        }
+        String verdura = verduras.poll();
+        System.out.println("Cliente " + customerId + " ha consumido: " + verdura);
+        notifyAll();
+    }
 }
