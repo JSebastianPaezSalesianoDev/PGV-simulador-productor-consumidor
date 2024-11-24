@@ -11,12 +11,12 @@ private int capacidad;
         this.capacidad = capacidad;
     }
 
-    public synchronized void añadirVerdura(String verdura, int farmerId) throws InterruptedException {
+    public synchronized void añadirVerdura(String verdura, String farmerName) throws InterruptedException {
         while (verduras.size() == capacidad) {
             wait();
         }
         verduras.add(verdura);
-        System.out.println("Granjero " + farmerId + " ha producido: " + verdura);
+        System.out.println("Granjero " + farmerName + " ha producido: " + verdura);
         notifyAll();
     }
 
