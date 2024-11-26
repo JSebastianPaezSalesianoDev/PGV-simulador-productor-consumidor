@@ -4,39 +4,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Orchard {
-    private int capacidad;
-    private List<String> verduras;
+    private int capacity;
+    private List<String> vegetables;
 
-    public Orchard(int capacidad) {
-        this.capacidad = capacidad;
-        this.verduras = new ArrayList<>(capacidad);
+    public Orchard(int capacity) {
+        this.capacity = capacity;
+        this.vegetables = new ArrayList<>(capacity);
     }
 
     public synchronized void añadirVerdura(String verdura, String farmerName) throws InterruptedException {
-        while (verduras.size() == capacidad) {
+        while (vegetables.size() == capacity) {
             System.out.println("Esperando abastecimiento de verduras para el granjero " + farmerName);
             wait();
         }
-        verduras.add(verdura);
+        vegetables.add(verdura);
         System.out.println("Granjero " + farmerName + " ha producido: " + verdura);
         notifyAll();
     }
 
     public synchronized void retirarVerdura(String customerId) throws InterruptedException {
-        while (verduras.isEmpty()) {
+        while (vegetables.isEmpty()) {
             System.out.println("Esperando que se plante la verduras");
             wait();
         }
-        String verdura = verduras.remove(0);
+        String verdura = vegetables.remove(0);
         System.out.println("Cliente " + customerId + " ha consumido: " + verdura);
         notifyAll();
     }
 
-    public boolean estaLleno() {
-        return verduras.size() == capacidad;
+    public boolean isItFull() {
+        return vegetables.size() == capacity;
     }
 
     public boolean estaVacio() {
-        return verduras.isEmpty();
+        return vegetables.isEmpty();
     }
 }

@@ -25,10 +25,10 @@ public class Farmer extends Thread {
         try {
             for (int i = 0; i < vegLimit; i++) {
                 String verdura = Vegetable.getVegetable();
-                int tiempoCrecimiento = random.nextInt(maxGrowingTime);
-                Thread.sleep(tiempoCrecimiento);
+                int growingTime = random.nextInt(maxGrowingTime);
+                Thread.sleep(growingTime);
                 System.out.println(this.getName() + " ha plantado una " + verdura + " que ha crecido en "
-                        + (tiempoCrecimiento / 1000) + " segundos.");
+                        + (growingTime / 1000) + " segundos.");
                 orchard.añadirVerdura(verdura, this.getName());
             }
         } catch (Exception e) {

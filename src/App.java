@@ -10,19 +10,19 @@ public class App {
         int capacidadAlmacen = 2;
 
 
-        Restaurant restaurante = new Restaurant(capacidadAlmacen);
+        Restaurant restaurant = new Restaurant(capacidadAlmacen);
 
   
-        Orchard orchard = restaurante.getOrchard();
+        Orchard orchard = restaurant.getOrchard();
 
       
         Farmer paco = new Farmer("Paco", 10, 5000, orchard);  
         Farmer ramon = new Farmer("Ramón", 10, 5000, orchard); 
 
         
-        Client faustino = new Client("Faustino", 5, 3000, orchard);  
-        Client mrGentleman = new Client("Mr. Gentleman", 10, 3000, orchard);  
-        Client loquendo = new Client("Loquendo", 5, 3000, orchard); 
+        Client faustino = new Client("Faustino", 2, 3000, orchard);  
+        Client mrGentleman = new Client("Mr. Gentleman", 1, 3000, orchard);  
+        Client loquendo = new Client("Loquendo", 0, 3000, orchard); 
 
         
         paco.start();
