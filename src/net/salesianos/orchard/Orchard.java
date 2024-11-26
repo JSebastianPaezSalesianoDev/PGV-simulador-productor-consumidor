@@ -14,6 +14,7 @@ public class Orchard {
 
     public synchronized void añadirVerdura(String verdura, String farmerName) throws InterruptedException {
         while (verduras.size() == capacidad) {
+            System.out.println("Esperando abastecimiento de verduras para el granjero " + farmerName);
             wait();
         }
         verduras.add(verdura);

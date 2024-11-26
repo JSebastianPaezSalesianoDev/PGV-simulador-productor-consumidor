@@ -21,7 +21,7 @@ public class App {
 
         
         Client faustino = new Client("Faustino", 5, 3000, orchard);  
-        Client mrGentleman = new Client("Mr. Gentleman", 10, 3000, orchard);  
+        Client mrGentleman = new Client("Mr. Gentleman", 5, 3000, orchard);  
         Client loquendo = new Client("Loquendo", 5, 3000, orchard); 
 
         
