@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        int capacidadAlmacen = 10;
+        int capacidadAlmacen = 2;
 
 
         Restaurant restaurante = new Restaurant(capacidadAlmacen);
@@ -21,7 +21,7 @@ public class App {
 
         
         Client faustino = new Client("Faustino", 5, 3000, orchard);  
-        Client mrGentleman = new Client("Mr. Gentleman", 5, 3000, orchard);  
+        Client mrGentleman = new Client("Mr. Gentleman", 10, 3000, orchard);  
         Client loquendo = new Client("Loquendo", 5, 3000, orchard); 
 
         

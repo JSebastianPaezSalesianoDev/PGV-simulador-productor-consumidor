@@ -24,6 +24,7 @@ public class Orchard {
 
     public synchronized void retirarVerdura(String customerId) throws InterruptedException {
         while (verduras.isEmpty()) {
+            System.out.println("Esperando que se plante la verduras");
             wait();
         }
         String verdura = verduras.remove(0);
