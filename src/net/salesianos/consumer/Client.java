@@ -21,7 +21,7 @@ public class Client extends Thread {
                 orchard.retirarVerdura(this.getName());
                 int tiempoConsumo = (int) (Math.random() * maxConsumptionTime);
                 Thread.sleep(tiempoConsumo);
-                System.out.println(this.getName() + " ha consumido una verdura en " + tiempoConsumo + " ms.");
+                System.out.println(this.getName() + " ha consumido una verdura en " + tiempoConsumo + " segundos.");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
