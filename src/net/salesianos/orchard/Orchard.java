@@ -12,13 +12,13 @@ public class Orchard {
         this.vegetables = new ArrayList<>(capacity);
     }
 
-    public synchronized void añadirVerdura(String verdura, String farmerName) throws InterruptedException {
+    public synchronized void añadirVerdura(String vegetable, String farmerName) throws InterruptedException {
         while (vegetables.size() == capacity) {
             System.out.println("Esperando abastecimiento de verduras para el granjero " + farmerName);
             wait();
         }
-        vegetables.add(verdura);
-        System.out.println("Granjero " + farmerName + " ha producido: " + verdura);
+        vegetables.add(vegetable);
+        System.out.println("Granjero " + farmerName + " ha producido: " + vegetable);
         notifyAll();
     }
 

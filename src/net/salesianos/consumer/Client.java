@@ -19,9 +19,9 @@ public class Client extends Thread {
         try {
             for (int i = 0; i < vegLimit; i++) {
                 orchard.retirarVerdura(this.getName());
-                int tiempoConsumo = (int) (Math.random() * maxConsumptionTime);
-                Thread.sleep(tiempoConsumo);
-                System.out.println(this.getName() + " ha consumido una verdura en " + tiempoConsumo + " segundos.");
+                int consumptionTime = (int) (Math.random() * maxConsumptionTime);
+                Thread.sleep(consumptionTime);
+                System.out.println(this.getName() + " ha consumido una verdura en " + consumptionTime + " segundos.");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

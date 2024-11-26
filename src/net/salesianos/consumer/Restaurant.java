@@ -8,8 +8,8 @@ public class Restaurant {
     public Restaurant() {
         
     }
-    public Restaurant(int capacidadAlmacen) {
-        orchard = new Orchard(capacidadAlmacen); 
+    public Restaurant(int capacityStorage) {
+        orchard = new Orchard(capacityStorage); 
     }
    
     public Orchard getOrchard() {
