@@ -10,7 +10,7 @@ public class Client extends Thread {
     public Client(String name, int vegLimit, int maxConsumptionTime, Orchard orchard) {
         super(name);
         this.vegLimit = vegLimit;
-        this.maxConsumptionTime = maxConsumptionTime/1000;
+        this.maxConsumptionTime = maxConsumptionTime / 1000;
         this.orchard = orchard;
     }
 
