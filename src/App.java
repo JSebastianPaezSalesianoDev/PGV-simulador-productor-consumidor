@@ -10,8 +10,8 @@ public class App {
         Restaurant restaurant = new Restaurant(capacidadAlmacen);
         Orchard orchard = restaurant.getOrchard();
 
-        Farmer paco = new Farmer("Paco", 5, 5000, orchard);
-        Client faustino = new Client("Faustino", 5, 3000, orchard);
+        Farmer paco = new Farmer("Paco", 5, 1000, orchard); 
+        Client faustino = new Client("Faustino", 5, 10000, orchard); 
 
         paco.start();
         faustino.start();
