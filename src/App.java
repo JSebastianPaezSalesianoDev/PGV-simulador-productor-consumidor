@@ -10,8 +10,11 @@ public class App {
         Restaurant restaurant = new Restaurant(capacidadAlmacen);
         Orchard orchard = restaurant.getOrchard();
 
-        Farmer paco = new Farmer("Paco", 5, 1000, orchard); 
-        Client faustino = new Client("Faustino", 5, 10000, orchard); 
+        Farmer paco = new Farmer("Paco", 5, 5000, orchard);
+        Client faustino = new Client("Faustino", 5, 1000, orchard);
+
+        paco.setPriority(Thread.MAX_PRIORITY);
+        faustino.setPriority(Thread.MIN_PRIORITY); 
 
         paco.start();
         faustino.start();
